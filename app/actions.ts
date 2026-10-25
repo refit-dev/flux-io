@@ -131,7 +131,7 @@ export async function CreateSubscription() {
     customer: stripeUserId.customerId as string,
     mode: "subscription",
     billing_address_collection: "auto",
-    payment_method_types: ["card"],
+    allowed_payment_method_types: ["card"],
     line_items: [{ price: process.env.STRIPE_PRICE_ID, quantity: 1 }],
     customer_update: {
       address: "auto",
